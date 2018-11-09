@@ -53,9 +53,10 @@ public class LongestWordFinder {
 		String[] words = null;
 		Word largestWord = null;
 
+		logger.debug("Input Sentence is :" + inputSentence);
 		// Return null if the input is null
 		mySentence = inputSentence;
-		if (mySentence == null)
+		if (mySentence == null || mySentence == "")
 			return largestWord;
 
 		/*
@@ -67,13 +68,13 @@ public class LongestWordFinder {
 
 		// Iterate through individual words to find the largest word
 		for (int i = 0; i < words.length; i++) {
-			logger.debug(words[i]);
 			if (words[i].length() > size) {
 				largestWordStr = words[i];
 				size = words[i].length();
 			}
 		}
 		logger.debug(("length is " + size));
+		logger.debug(("largest word is " + largestWordStr));
 
 		// Populate the model with the largest word
 		largestWord = new Word(largestWordStr);
