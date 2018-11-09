@@ -25,10 +25,17 @@ public class LongestWordFinder {
 	 *             longest word and its length
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Word largestWord = null;
+
+		if (args == null || args.length == 0) {
+			logger.error("Input Sentence not provided. Please provide a valid input");
+			return;
+		}
+
+		largestWord = lengthChecker(args[0]);
+		logger.info("largest word is  " + largestWord.getWord() + " and its length is " + largestWord.getLength());
 
 	}
-	
 
 	/**
 	 * This method is used to find the longest word and its length for a given input
@@ -39,8 +46,41 @@ public class LongestWordFinder {
 	 */
 
 	public static Word lengthChecker(String inputSentence) {
-		return null;
-	
+		// initialize the local variables
+		int size = 0;
+		String largestWordStr = null;
+		String mySentence = null;
+		String[] words = null;
+		Word largestWord = null;
+
+		// Return null if the input is null
+		mySentence = inputSentence;
+		if (mySentence == null)
+			return largestWord;
+
+		/*
+		 * Parse the input sentence into individual words with /s(space) as the regular
+		 * expression.
+		 * 
+		 */
+		words = mySentence.split("\\s");
+
+		// Iterate through individual words to find the largest word
+		for (int i = 0; i < words.length; i++) {
+			logger.debug(words[i]);
+			if (words[i].length() > size) {
+				largestWordStr = words[i];
+				size = words[i].length();
+			}
+		}
+		logger.debug(("length is " + size));
+
+		// Populate the model with the largest word
+		largestWord = new Word(largestWordStr);
+
+		// Return the largest word
+		return largestWord;
+
 	}
 
 }
