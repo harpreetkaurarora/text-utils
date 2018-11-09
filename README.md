@@ -14,6 +14,7 @@ Maven is required to build, install and execute the test
 1) Clone the repository using the link https://github.com/harpreetkaurarora/text-utils.git
 2) Import the maven project WordLengthChecker if using eclipse or any other editor  
 3) Naviagte to the root of the WordLengthChecker and execute the following command to build and install 
+   
    mvn clean install
 
 # Running the tests
