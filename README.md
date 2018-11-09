@@ -19,6 +19,7 @@ Maven is required to build, install and execute the test
 
 # Running the tests
 Testing first requires building WordLengthChecker. Once WordLengthChecker is built, tests can be run issuing command 
+
 mvn test
 
 # Viewing TestNG Reports  
